@@ -23,7 +23,7 @@ const BookList = ()=>{
         }
     ]
     return (
-        <div>
+        <div className="book-card">
         <ul className="book-list">
             {bookCollection.map(book=>
                 <li Book key={book.id}> 

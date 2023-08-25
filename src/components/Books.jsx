@@ -3,7 +3,7 @@ import BookList from './BookList';
 import AddBook from './addBookForm';
 
 const Books = () => (
-  <section>
+  <section className="bookstore-cms">
     <BookList />
     <AddBook />
   </section>
