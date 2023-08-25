@@ -32,7 +32,6 @@ const BookList = ()=>{
                 </li>
             )}
         </ul>
-        <AddBook />
         </div>
     );
 };
