@@ -10,7 +10,6 @@
 - [BookStore React App](#bookstore-react-app)
 - [📗 Table of Contents](#-table-of-contents)
 - [📖 BookStore React App ](#-bookstore-react-app-)
-  - [🚀 Live Demo ](#-live-demo-)
 - [📖 BookStore React App ](#-bookstore-react-app--1)
   - [🛠 Built With HTML, CSS and JavaScript](#-built-with-html-css-and-javascript)
     - [Tech Stack ](#tech-stack-)
@@ -31,9 +30,6 @@
 
 **BookStore React App**
 This project will lay the foundations for my Bookstore website. I will create the user interface using React. I will also setup client-side routing using React Router V6.In this Repo I will create a simplified version of bookstore that allows me to: Display a list of books, Add a book, and Remove a selected book. Its an appilcation of using React and Redux in the context of a real application.
-
-## 🚀 Live Demo <a name="live-demo"></a>
--coming soon
 
 # 📖 BookStore React App <a name="live-demo"></a>
 
