@@ -28,7 +28,13 @@ const BookList = ()=>{
             {bookCollection.map(book=>
                 <li Book key={book.id}> 
                 <Book title={book.title} author={book.author}/>
-                <button type="button">Remove</button>
+                <div>
+                    <button type="button">Comments</button>
+                    <span>|</span>
+                    <button type="button">Remove</button>
+                    <span>|</span>
+                    <button type="button">Edit</button>
+                </div>
                 </li>
             )}
         </ul>
