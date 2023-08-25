@@ -26,7 +26,10 @@ const BookList = ()=>{
         <div>
         <ul className="book-list">
             {bookCollection.map(book=>
-                <Book key={book.id} title={book.title} author={book.author}/>
+                <li Book key={book.id}> 
+                <Book title={book.title} author={book.author}/>
+                <button type="button">Remove</button>
+                </li>
             )}
         </ul>
         <AddBook />
