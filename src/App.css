@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Raleway:ital,wght@0,400;0,700;1,700&display=swap");
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  width: 100rem;
+  height: 89.625rem;
+  padding: 9.313rem 3.75rem 7.688rem 6.25rem;
+  background-color: #f5f6fa;
+  font-family: "Lora", serif;
+}
+
+.bookstore-cms {
+  width: 87.5rem;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fafafa;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 87.5rem;
+  margin: 0 0 1.2rem;
+  padding: 1.438rem 6.188rem 1.688rem 6.25rem;
+  background-color: #fff;
+}
+
+h1 {
+  width: 15rem;
+  height: 2.313rem;
+  margin: 0.375rem 2.938rem 0.125rem 0;
+  font-family: "Lora", serif;
+  font-size: 1.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #0290ff;
+}
+
+.nav-list {
+  display: flex;
+  gap: 1.5rem;
+  font-family: "Lora", serif;
+  font-size: 1.5rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.9px;
+  color: #121212;
+  list-style: none;
+}
+
+.book-card {
+  width: 87.5rem;
+  height: 10rem;
+  margin: 0 1rem 1rem 0;
+  padding: 0 0 35.625rem;
+  border-radius: 4px;
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+}
+
+.book-list {
+  width: 75rem;
+  margin: 1.2rem;
+  padding: 2rem;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #fff;
+  list-style: none;
+}
+
+.form-card {
+  margin-left: 3rem;
+  padding: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  width: 50.813rem;
+  height: 2.813rem;
+  margin: 1.188rem 2.125rem 0;
+  padding: 0.375rem 0.938rem 0.563rem 1rem;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #fff;
+}
+
+h2 {
+  width: 10.875rem;
+  height: 1.5rem;
+  padding-left: 2rem;
+  margin: 1.813rem 32.75rem 1.188rem 0;
+  font-family: "Lora", serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.18px;
+  color: #888;
+}
+
+.add-butn {
+  width: 11.5rem;
+  height: 2.813rem;
+  margin: 0.188rem 0 0 8.125rem;
+  padding: 0.801rem 1.188rem 0.886rem 1.375rem;
+  border-radius: 3px;
+  background-color: #0290ff;
+}
