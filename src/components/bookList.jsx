@@ -1,30 +1,13 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import Book from './Book';
 
 const BookList = () => {
-  const bookCollection = [
-    {
-      id: 1,
-      title: 'book 1',
-      author: 'Author 1',
-    },
-
-    {
-      id: 2,
-      title: 'book 2',
-      author: 'Author 2',
-    },
-
-    {
-      id: 3,
-      title: 'book 3',
-      author: 'Author 3',
-    },
-  ];
+  const books = useSelector((state) => state.books);
   return (
     <div className="book-card">
       <ul className="book">
-        {bookCollection.map((book) => (
+        {books.map((book) => (
           // eslint-disable-next-line react/no-unknown-property
           <li className="book-list" Book key={book.id}>
             <Book title={book.title} author={book.author} />
