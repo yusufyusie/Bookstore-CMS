@@ -24,14 +24,14 @@ const AddBook = () => {
   };
 
   return (
-  <div className="form-card">
-    <h2>ADD NEW BOOK</h2>
-    <form>
-      <input type="text" name="title" placeholder="Title" onChange={changeHandler} required />
-      <input type="text" name="author" id="author" placeholder="Author" onChange={changeHandler} required />
-      <button type="button" className="add-butn" onClick={addBookHandler}>ADD BOOK</button>
-    </form>
-  </div>
+    <div className="form-card">
+      <h2>ADD NEW BOOK</h2>
+      <form>
+        <input type="text" name="title" placeholder="Title" onChange={changeHandler} required />
+        <input type="text" name="author" id="author" placeholder="Author" onChange={changeHandler} required />
+        <button type="button" className="add-butn" onClick={addBookHandler}>ADD BOOK</button>
+      </form>
+    </div>
   );
 };
 
