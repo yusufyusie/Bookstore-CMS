@@ -11,7 +11,7 @@ const BookList = () => {
       <ul className="book">
         {books.map((book) => (
           <li className="book-list" key={book.id}>
-            <Book title={book.title} author={book.author} />
+            <Book id={book.id} title={book.title} author={book.author} />
             <div>
               <button type="button">Comments</button>
               <span>|</span>
