@@ -9,7 +9,7 @@ body {
   padding: 9.313rem 3.75rem 7.688rem 6.25rem;
   background: #0000000d;
   font-family: 'Roboto Slab', serif;
-  color:  #121212;;
+  color: #121212;
 }
 
 header {
@@ -17,7 +17,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 15px 100px;
-  background-color: #fff;;
+  background-color: #fff;
   letter-spacing: 1.9px;
 }
 
@@ -41,13 +41,13 @@ nav ul {
 
 a {
   text-decoration: none;
-  color: #121212;;
+  color: #121212;
   opacity: 0.5;
 }
 
 .avatar {
-  color: #0290ff;;
-  border: 1px solid #e8e8e8;;
+  color: #0290ff;
+  border: 1px solid #e8e8e8;
   border-radius: 50%;
   width: 45px;
   height: 45px;
@@ -62,7 +62,7 @@ a {
 }
 
 .activelink {
-  color: #121212;;
+  color: #121212;
   opacity: 1;
 }
 
@@ -70,13 +70,13 @@ a {
   list-style-type: none;
   padding: 32px 0;
   gap: 16px;
-  border-bottom: solid 1px #e8e8e8;;
+  border-bottom: solid 1px #e8e8e8;
 }
 
 .bookstore-cms ul li {
   padding: 16px 32px;
   margin-bottom: 16px;
-  background-color: #fff;;
+  background-color: #fff;
   display: flex;
 }
 
