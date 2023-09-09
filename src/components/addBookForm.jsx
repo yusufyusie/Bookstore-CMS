@@ -6,9 +6,9 @@ import { v4 } from 'uuid';
 const AddBook = () => {
   const dispatch = useDispatch();
   const [state, setState] = React.useState({
-    category: '',
     title: '',
     author: '',
+    category: '',
   });
 
   const handleChange = (event) => {
@@ -27,7 +27,7 @@ const AddBook = () => {
     await dispatch(addBook(newBook));
     await dispatch(fetchBooks());
 
-    setState({ category: '', title: '', author: '' });
+    setState({ title: '', author: '', category: '' });
   };
 
   return (
@@ -36,11 +36,11 @@ const AddBook = () => {
       <form onSubmit={addBookHandler}>
         <input type="text" placeholder="Title" value={state.title} name="title" onChange={handleChange} />
         <input type="text" placeholder="Author" value={state.author} name="author" onChange={handleChange} />
-        <select type="text" name="category" id="categoryid" value={state.category} className="input category-input" onChange={handleChange}>
-          <option value={state.category}> Category</option>
-          <option value="Action">Action</option>
-          <option value="Science Fiction">Science Fiction</option>
-          <option value="Literature">Literature</option>
+        <select type="text" name="category" value={state.category} placeholder="Category" onChange={handleChange} id="input-category">
+          <option value="" disabled>Categories</option>
+          <option value="fiction">Fiction</option>
+          <option value="non-fiction">Non-Fiction</option>
+          <option value="biography">Biography</option>
         </select>
         <button type="submit" className="add-butn">Add Book</button>
       </form>
