@@ -20,7 +20,7 @@ const AddBook = () => {
       item_id: v4(),
       title: state.title,
       author: state.author,
-      category: '',
+      category: state.category,
     };
 
     await dispatch(addBook(newBook));
@@ -35,6 +35,12 @@ const AddBook = () => {
       <form onSubmit={addBookHandler}>
         <input type="text" placeholder="Title" value={state.title} name="title" onChange={handleChange} />
         <input type="text" placeholder="Author" value={state.author} name="author" onChange={handleChange} />
+        <select name="inpcategory" id="categoryid" className="input category-input" onChange={handleChange}>
+          <option value=""> Select category</option>
+          <option value="Action">Action</option>
+          <option value="Science Fiction">Science Fiction</option>
+          <option value="Literature">Literature</option>
+        </select>
         <button type="submit">Add Book</button>
       </form>
     </div>
