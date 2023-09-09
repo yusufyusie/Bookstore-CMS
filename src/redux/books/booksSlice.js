@@ -1,6 +1,6 @@
-const ADD_BOOK = 'Bookstore/books/ADD_BOOK';
-const REMOVE_BOOK = 'Bookstore/books/REMOVE_BOOK';
-const FETCH_BOOKS = 'Bookstore/books/FETCH_BOOKS';
+export const ADD_BOOK = 'Bookstore/books/ADD_BOOK';
+export const REMOVE_BOOK = 'Bookstore/books/REMOVE_BOOK';
+export const FETCH_BOOKS = 'Bookstore/books/FETCH_BOOKS';
 
 const initialState = [];
 
