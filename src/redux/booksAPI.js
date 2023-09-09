@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { FETCH_BOOKS, fetchBooks } from './books/booksSlice';
+import { FETCH_BOOKS, fetchBooks, ADD_BOOK, addBook } from './books/booksSlice';
 
 const APP_ID = 'doVfOZKYHMqPNDJVFHKX';
 const BASE_URL = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${APP_ID}`;
@@ -14,4 +14,17 @@ const getBooks = createAsyncThunk(FETCH_BOOKS, async (_, thunkAPI) => {
   return responseJSON;
 });
 
-export default getBooks;
+const postBook = createAsyncThunk(ADD_BOOK, async (book, thunkAPI) => {
+    const response = await fetch(BOOK_URL, {
+      method: 'POST',
+      body: JSON.stringify(book),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    const responseText = await response.text();
+    thunkAPI.dispatch(addBook(book));
+    return responseText;
+  });
+
+export default {getBooks,postBook};
