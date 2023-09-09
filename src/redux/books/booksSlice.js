@@ -32,7 +32,7 @@ const deleteBook = createAsyncThunk(
 
 // Reducer
 
-const bookReducer = (state = initialState, action) => {
+const booksSlice = (state = initialState, action) => {
   switch (action.type) {
     case 'books/fetchBooks/fulfilled':
       return {
@@ -55,5 +55,4 @@ const bookReducer = (state = initialState, action) => {
 };
 
 export { addBook, deleteBook, fetchBooks };
-
-export default bookReducer;
+export default booksSlice;

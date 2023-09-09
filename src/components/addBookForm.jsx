@@ -1,6 +1,5 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { v4 } from 'uuid';
 import { addBook, fetchBooks } from '../redux/books/booksSlice';
 
