@@ -45,6 +45,15 @@ const bookReducer = (state = initialState, action) => {
       return [...state, action.payload];
     case REMOVE_BOOK:
       return state.filter((book) => book.id !== action.payload);
+    case FETCH_BOOKS: {
+      const bookList = [];
+      Object.entries(action.books).forEach(([key, value]) => bookList.push({
+        id: key,
+        title: value[0].title,
+        author: value[0].author,
+      }));
+      return [...bookList];
+    }
     default:
       return state;
   }
