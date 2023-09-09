@@ -27,7 +27,6 @@ body {
   border-radius: 4px;
   box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
   background-color: #fafafa;
-  
 }
 
 nav {
@@ -37,7 +36,6 @@ nav {
   padding: 1.438rem 6.188rem 1.688rem 6.25rem;
   background-color: #fff;
   list-style: none;
-
 }
 
 h1 {
@@ -140,7 +138,7 @@ ul {
   list-style-type: none;
   padding: 32px 0;
   gap: 16px;
-  border-bottom: solid 1px #e8e8e8;;
+  border-bottom: solid 1px #e8e8e8;
 }
 
 ul li {
@@ -191,7 +189,7 @@ h2 {
   padding: 0.801rem 1.188rem 0.886rem 1.375rem;
   border-radius: 3px;
   background-color: #0290ff;
-  color: #ffffff;
+  color: #fff;
 }
 
 .progress {
@@ -259,7 +257,7 @@ h2 {
 
 .column-divider {
   align-self: center;
-  border: 1px solid #e8e8e8;;
+  border: 1px solid #e8e8e8;
   width: 0.125rem;
   height: 4.375rem;
   margin: 1.125rem 3.688rem 0 4.938rem;
