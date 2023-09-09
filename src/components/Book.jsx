@@ -27,6 +27,27 @@ const Book = (props) => {
         <span>|</span>
         <button type="button">Edit</button>
       </div>
+      <div className="progress">
+        <div className="progress-circle" />
+        <div className="percentage">
+          <p className="percent">
+            75%
+          </p>
+          <p className="completed">Completed</p>
+        </div>
+      </div>
+      <span>|</span>
+      <div className="chapter">
+        <div className="chapter-info">
+          <p className="cur-chapter">CURRENT CHAPTER</p>
+          <p className="chapter-num">
+            Chapter
+            {' '}
+            {Math.floor(Math.random() * 101)}
+          </p>
+        </div>
+        <button type="button" className="progress-btn">UPDATE PROGRESS</button>
+      </div>
     </li>
   );
 };
