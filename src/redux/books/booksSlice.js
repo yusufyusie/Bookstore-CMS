@@ -1,5 +1,6 @@
 const ADD_BOOK = 'Bookstore/books/ADD_BOOK';
 const REMOVE_BOOK = 'Bookstore/books/REMOVE_BOOK';
+const FETCH_BOOKS = 'Bookstore/books/FETCH_BOOKS';
 
 const initialState = [
   {
@@ -29,6 +30,11 @@ export const addBook = (book) => ({
 export const removeBook = (id) => ({
   type: REMOVE_BOOK,
   payload: id,
+});
+
+export const fetchBooks = (books) => ({
+  type: FETCH_BOOKS,
+  payload: books,
 });
 
 // Reducer
