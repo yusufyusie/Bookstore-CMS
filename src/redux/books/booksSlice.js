@@ -10,7 +10,7 @@ const fetchBooks = createAsyncThunk(
   'books/fetchBooks',
   async () => {
     const { data } = await BookSrvc.getSrvc();
-    return Object.keys(data).map((key) => ({ ...data[key][0], item_id: key }));
+    return Object.keys(data).map((key) => ({ ...data[key][0], itemId: key }));
   },
 );
 

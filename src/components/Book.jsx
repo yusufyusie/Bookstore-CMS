@@ -4,12 +4,13 @@ import PropTypes from 'prop-types';
 import { deleteBook, fetchBooks } from '../redux/books/booksSlice';
 
 const Book = (props) => {
-  // eslint-disable-next-line camelcase
-  const { item_id, title, author, category } = props;
+  const {
+    itemId, title, author, category,
+  } = props;
   const dispatch = useDispatch();
 
   const handleClick = async () => {
-    await dispatch(deleteBook(item_id));
+    await dispatch(deleteBook(itemId));
     await dispatch(fetchBooks());
   };
   return (
@@ -17,15 +18,15 @@ const Book = (props) => {
       <div className="book">
         <div className="book-content">
           <div className="book-details">
-            <p className="book-catgory">{category}</p>
+            <p className="book-category">{category}</p>
             <p className="book-title">{title}</p>
             <p className="author-name">{author}</p>
             <div className="action-buttons">
-              <button type="button">Comments</button>
+              <button className="btn-outline" type="button">Comments</button>
               <span>|</span>
-              <button type="button" onClick={handleClick}>Remove</button>
+              <button className="btn-outline" type="button" onClick={handleClick}>Remove</button>
               <span>|</span>
-              <button type="button">Edit</button>
+              <button className="btn-outline" type="button">Edit</button>
             </div>
           </div>
           <div className="progress">
@@ -56,7 +57,7 @@ const Book = (props) => {
 };
 
 Book.propTypes = {
-  item_id: PropTypes.string.isRequired,
+  itemId: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
