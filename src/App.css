@@ -222,7 +222,7 @@ h2 {
 
 .column-divider {
   align-self: center;
-  border: 1px solid var(--light-border);
+  border: 1px solid #e8e8e8;;
   height: 66px;
   margin: 0 59px;
   width: 2px;
