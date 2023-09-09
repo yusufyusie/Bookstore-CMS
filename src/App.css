@@ -174,12 +174,12 @@ h2 {
 }
 
 .progress-circle {
-  border: 5px solid var(--secondary-blue);
+  border: 5px solid #379cf6;
   border-left-color: #f3f3f3;
   border-radius: 50%;
-  height: 68px;
   transform: rotate(45deg);
-  width: 68px;
+  width: 4.25rem;
+  height: 4.25rem;
 }
 
 .percentage {
@@ -188,12 +188,21 @@ h2 {
 }
 
 .percent {
-  font-size: 32px;
+  width: 4.25rem;
+  height: 2.438rem;
+  font-size: 2rem;
+  color: #121212;
+  margin: 0.063rem 5.75rem 0 0.688rem;
 }
 
 .completed {
+  width: 5rem;
+  height: 1.125rem;
+  margin: 0.438rem 4.938rem 0.75rem 0.75rem;
   opacity: 0.5;
-  font-size: 15px;
+  font-family: "Lora", serif;
+  font-size: 0.875rem;
+  color: #121212;
 }
 
 .chapter {
@@ -223,7 +232,7 @@ h2 {
 .column-divider {
   align-self: center;
   border: 1px solid #e8e8e8;;
-  height: 66px;
-  margin: 0 59px;
-  width: 2px;
+  width: 0.125rem;
+  height: 4.375rem;
+  margin: 1.125rem 3.688rem 0 4.938rem;
 }
