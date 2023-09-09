@@ -19,6 +19,7 @@ const BookList = () => {
               item_id={book.item_id}
               title={book.title}
               author={book.author}
+              catgory={book.catgory}
             />
           </li>
         ))}

@@ -1,13 +1,14 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { v4 } from 'uuid';
 import { addBook, fetchBooks } from '../redux/books/booksSlice';
+import { v4 } from 'uuid';
 
 const AddBook = () => {
   const dispatch = useDispatch();
   const [state, setState] = React.useState({
     title: '',
     author: '',
+    category: '',
   });
 
   const handleChange = (event) => {
@@ -26,7 +27,7 @@ const AddBook = () => {
     await dispatch(addBook(newBook));
     await dispatch(fetchBooks());
 
-    setState({ title: '', author: '' });
+    setState({ title: '', author: '', category: '' });
   };
 
   return (
@@ -35,13 +36,13 @@ const AddBook = () => {
       <form onSubmit={addBookHandler}>
         <input type="text" placeholder="Title" value={state.title} name="title" onChange={handleChange} />
         <input type="text" placeholder="Author" value={state.author} name="author" onChange={handleChange} />
-        <select name="inpcategory" id="categoryid" className="input category-input" onChange={handleChange}>
-          <option value=""> Select category</option>
+        <select name="category" id="categoryid" className="input category-input" onChange={handleChange}>
+          <option value={state.category}> Category</option>
           <option value="Action">Action</option>
           <option value="Science Fiction">Science Fiction</option>
           <option value="Literature">Literature</option>
         </select>
-        <button type="submit">Add Book</button>
+        <button type="submit" className="add-butn">Add Book</button>
       </form>
     </div>
   );
