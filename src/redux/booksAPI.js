@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { FETCH_BOOKS, fetchBooks, ADD_BOOK, addBook } from './books/booksSlice';
+import { FETCH_BOOKS, fetchBooks, ADD_BOOK, addBook, REMOVE_BOOK, removeBook } from './books/booksSlice';
 
 const APP_ID = 'doVfOZKYHMqPNDJVFHKX';
 const BASE_URL = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${APP_ID}`;
@@ -27,4 +27,19 @@ const postBook = createAsyncThunk(ADD_BOOK, async (book, thunkAPI) => {
     return responseText;
   });
 
-export default {getBooks,postBook};
+  const deleteBook = createAsyncThunk(REMOVE_BOOK, async (bookId, thunkAPI) => {
+    const response = await fetch(`${BOOK_URL}/${bookId}`, {
+      method: 'DELETE',
+      body: JSON.stringify({
+        item_id: bookId,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    const responseText = await response.text();
+    thunkAPI.dispatch(removeBook(bookId));
+    return responseText;
+  });
+
+export default {getBooks,postBook, deleteBook};
