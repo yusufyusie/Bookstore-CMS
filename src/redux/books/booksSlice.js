@@ -1,46 +1,59 @@
-export const ADD_BOOK = 'Bookstore/books/ADD_BOOK';
-export const REMOVE_BOOK = 'Bookstore/books/REMOVE_BOOK';
-export const FETCH_BOOKS = 'Bookstore/books/FETCH_BOOKS';
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import BookSrvc from '../booksAPI';
 
-const initialState = [];
-
+const initialState = {
+  books: [],
+};
 // Actions
 
-export const addBook = (book) => ({
-  type: ADD_BOOK,
-  payload: book,
-});
+const fetchBooks = createAsyncThunk(
+  'books/fetchBooks',
+  async () => {
+    const { data } = await BookSrvc.getSrvc();
+    return Object.keys(data).map((key) => ({ ...data[key][0], item_id: key }));
+  },
+);
 
-export const removeBook = (id) => ({
-  type: REMOVE_BOOK,
-  payload: id,
-});
+const addBook = createAsyncThunk(
+  'books/addBook',
+  async (Book) => {
+    const response = await BookSrvc.addSrvc(Book);
+    return response.data;
+  },
+);
 
-export const fetchBooks = (books) => ({
-  type: FETCH_BOOKS,
-  payload: books,
-});
+const deleteBook = createAsyncThunk(
+  'books/deleteBook',
+  async (id) => {
+    await BookSrvc.deleteSrvc(id);
+    return id;
+  },
+);
 
 // Reducer
 
 const bookReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_BOOK:
-      return [...state, action.payload];
-    case REMOVE_BOOK:
-      return state.filter((book) => book.id !== action.payload);
-    case FETCH_BOOKS: {
-      const bookList = [];
-      Object.entries(action.books).forEach(([key, value]) => bookList.push({
-        id: key,
-        title: value[0].title,
-        author: value[0].author,
-      }));
-      return [...bookList];
-    }
+    case 'books/fetchBooks/fulfilled':
+      return {
+        ...state,
+        books: action.payload,
+      };
+    case addBook.fulfilled:
+      return {
+        ...state,
+        books: [...state.books, action.payload],
+      };
+    case deleteBook.fulfilled:
+      return {
+        ...state,
+        books: state.books.filter((book) => book.id !== action.payload),
+      };
     default:
       return state;
   }
 };
+
+export { addBook, deleteBook, fetchBooks };
 
 export default bookReducer;
