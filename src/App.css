@@ -80,6 +80,24 @@ h1 {
   background-color: #fff;
 }
 
+.book {
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid #e8e8e8;
+  padding: 2rem;
+}
+
+.book-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.book-details {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .book-list {
   width: 75rem;
   margin: 1.2rem;
@@ -88,6 +106,20 @@ h1 {
   border: solid 1px #e8e8e8;
   background-color: #fff;
   list-style: none;
+}
+
+ul {
+  list-style-type: none;
+  padding: 32px 0;
+  gap: 16px;
+  border-bottom: solid 1px var(--light-border);
+}
+
+ul li {
+  padding: 16px 32px;
+  margin-bottom: 16px;
+  background-color: var(--primary-white);
+  display: flex;
 }
 
 .form-card {
@@ -132,4 +164,66 @@ h2 {
   border-radius: 3px;
   background-color: #0290ff;
   color: #ffffff;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+}
+
+.progress-circle {
+  border: 5px solid var(--secondary-blue);
+  border-left-color: #f3f3f3;
+  border-radius: 50%;
+  height: 68px;
+  transform: rotate(45deg);
+  width: 68px;
+}
+
+.percentage {
+  display: flex;
+  flex-direction: column;
+}
+
+.percent {
+  font-size: 32px;
+}
+
+.completed {
+  opacity: 0.5;
+  font-size: 15px;
+}
+
+.chapter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+  flex: 0.5;
+  align-items: flex-start;
+}
+
+.chapter-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cur-chapter {
+  opacity: 0.5;
+  font-size: 0.8rem;
+}
+
+.chapter-num {
+  font-size: 1rem;
+}
+
+.column-divider {
+  align-self: center;
+  border: 1px solid var(--light-border);
+  height: 66px;
+  margin: 0 59px;
+  width: 2px;
 }

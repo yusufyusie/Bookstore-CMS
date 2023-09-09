@@ -13,38 +13,42 @@ const Book = (props) => {
     await dispatch(fetchBooks());
   };
   return (
-    <li className="book">
-      <p className="book-title">{title}</p>
-      <p className="author-name">{author}</p>
-      <p className="book-catgory">{catgory}</p>
-      <div>
-        <div>
-          <button type="button">Comments</button>
-          <span>|</span>
-          <button type="button" onClick={handleClick}>Remove</button>
-          <span>|</span>
-          <button type="button">Edit</button>
-        </div>
-        <div className="progress">
-          <div className="progress-circle" />
-          <div className="percentage">
-            <p className="percent">
-              75%
-            </p>
-            <p className="completed">Completed</p>
+    <li>
+      <div className="book">
+        <div className="book-content">
+          <div className="book-details">
+            <p className="book-title">{title}</p>
+            <p className="author-name">{author}</p>
+            <p className="book-catgory">{catgory}</p>
+            <div className="action-buttons">
+              <button type="button">Comments</button>
+              <span>|</span>
+              <button type="button" onClick={handleClick}>Remove</button>
+              <span>|</span>
+              <button type="button">Edit</button>
+            </div>
           </div>
-        </div>
-        <span>|</span>
-        <div className="chapter">
-          <div className="chapter-info">
-            <p className="cur-chapter">CURRENT CHAPTER</p>
-            <p className="chapter-num">
-              Chapter
-              {' '}
-              {Math.floor(Math.random() * 101)}
-            </p>
+          <div className="progress">
+            <div className="progress-circle" />
+            <div className="percentage">
+              <p className="percent">
+                75%
+              </p>
+              <p className="completed">Completed</p>
+            </div>
           </div>
-          <button type="button" className="progress-btn">UPDATE PROGRESS</button>
+          <div className="column-divider" />
+          <div className="chapter">
+            <div className="chapter-info">
+              <p className="cur-chapter">CURRENT CHAPTER</p>
+              <p className="chapter-num">
+                Chapter
+                {' '}
+                {Math.floor(Math.random() * 101)}
+              </p>
+            </div>
+            <button type="button" className="progress-btn">UPDATE PROGRESS</button>
+          </div>
         </div>
       </div>
     </li>
