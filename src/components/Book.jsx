@@ -5,7 +5,7 @@ import { deleteBook, fetchBooks } from '../redux/books/booksSlice';
 
 const Book = (props) => {
   // eslint-disable-next-line camelcase
-  const { item_id, title, author, catgory } = props;
+  const { item_id, catgory, title, author } = props;
   const dispatch = useDispatch();
 
   const handleClick = async () => {
@@ -17,9 +17,9 @@ const Book = (props) => {
       <div className="book">
         <div className="book-content">
           <div className="book-details">
+            <p className="book-catgory">{catgory}</p>
             <p className="book-title">{title}</p>
             <p className="author-name">{author}</p>
-            <p className="book-catgory">{catgory}</p>
             <div className="action-buttons">
               <button type="button">Comments</button>
               <span>|</span>
@@ -57,9 +57,9 @@ const Book = (props) => {
 
 Book.propTypes = {
   item_id: PropTypes.string.isRequired,
+  catgory: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
-  catgory: PropTypes.string.isRequired,
 };
 
 export default Book;

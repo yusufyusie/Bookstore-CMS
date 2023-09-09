@@ -6,9 +6,9 @@ import { v4 } from 'uuid';
 const AddBook = () => {
   const dispatch = useDispatch();
   const [state, setState] = React.useState({
+    category: '',
     title: '',
     author: '',
-    category: '',
   });
 
   const handleChange = (event) => {
@@ -19,15 +19,15 @@ const AddBook = () => {
     event.preventDefault();
     const newBook = {
       item_id: v4(),
+      category: state.category,
       title: state.title,
       author: state.author,
-      category: state.category,
     };
 
     await dispatch(addBook(newBook));
     await dispatch(fetchBooks());
 
-    setState({ title: '', author: '', category: '' });
+    setState({ category: '', title: '', author: '' });
   };
 
   return (
@@ -36,7 +36,7 @@ const AddBook = () => {
       <form onSubmit={addBookHandler}>
         <input type="text" placeholder="Title" value={state.title} name="title" onChange={handleChange} />
         <input type="text" placeholder="Author" value={state.author} name="author" onChange={handleChange} />
-        <select name="category" id="categoryid" className="input category-input" onChange={handleChange}>
+        <select type="text" name="category" id="categoryid" value={state.category} className="input category-input" onChange={handleChange}>
           <option value={state.category}> Category</option>
           <option value="Action">Action</option>
           <option value="Science Fiction">Science Fiction</option>

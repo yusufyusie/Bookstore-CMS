@@ -31,13 +31,13 @@ body {
 }
 
 nav {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
   width: 87.5rem;
-  margin: 0 0 1.2rem;
+  height: 5.938rem;
+  margin: 0 0 2.375rem;
   padding: 1.438rem 6.188rem 1.688rem 6.25rem;
   background-color: #fff;
+  list-style: none;
+
 }
 
 h1 {
@@ -98,6 +98,34 @@ h1 {
   width: 100%;
 }
 
+.book-category {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.875rem;
+  opacity: 0.5;
+}
+
+.book-title {
+  margin-top: 0.188rem;
+  font-size: 1.375rem;
+  letter-spacing: -0.2px;
+  font-family: "Roboto Slab", serif;
+}
+
+.book-catgory,
+.book-title {
+  font-weight: 700;
+  color: #121212;
+  text-transform: capitalize;
+}
+
+.book-name {
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #4386bf;
+  font-family: "Roboto Slab", serif;
+  text-transform: capitalize;
+}
+
 .book-list {
   width: 75rem;
   margin: 1.2rem;
@@ -112,13 +140,13 @@ ul {
   list-style-type: none;
   padding: 32px 0;
   gap: 16px;
-  border-bottom: solid 1px var(--light-border);
+  border-bottom: solid 1px #e8e8e8;;
 }
 
 ul li {
   padding: 16px 32px;
   margin-bottom: 16px;
-  background-color: var(--primary-white);
+  background-color: #fff;
   display: flex;
 }
 
