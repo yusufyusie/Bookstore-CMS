@@ -1,35 +1,41 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/booksSlice';
+import { v4 } from 'uuid';
+import { addBook, fetchBooks } from '../redux/books/booksSlice';
 
 const AddBook = () => {
-  const [inputData, setInputData] = useState({ title: '', author: '' });
-
   const dispatch = useDispatch();
+  const [state, setState] = React.useState({
+    title: '',
+    author: '',
+  });
 
-  const changeHandler = (e) => {
-    setInputData({
-      ...inputData,
-      [e.target.name]: e.target.value,
-    });
+  const handleChange = (event) => {
+    setState({ ...state, [event.target.name]: event.target.value });
   };
 
-  const addBookHandler = (e) => {
-    e.preventDefault();
-    const { title, author } = inputData;
-    if (title && author) {
-      dispatch(addBook({ title, author }));
-      setInputData({ title: '', author: '' });
-    }
+  const addBookHandler = async (event) => {
+    event.preventDefault();
+    const newBook = {
+      item_id: v4(),
+      title: state.title,
+      author: state.author,
+      category: '',
+    };
+
+    await dispatch(addBook(newBook));
+    await dispatch(fetchBooks());
+
+    setState({ title: '', author: '' });
   };
 
   return (
     <div className="form-card">
       <h2>ADD NEW BOOK</h2>
-      <form>
-        <input type="text" name="title" placeholder="Title" onChange={changeHandler} required />
-        <input type="text" name="author" id="author" placeholder="Author" onChange={changeHandler} required />
-        <button type="button" className="add-butn" onClick={addBookHandler}>ADD BOOK</button>
+      <form onSubmit={addBookHandler}>
+        <input type="text" placeholder="Title" value={state.title} name="title" onChange={handleChange} />
+        <input type="text" placeholder="Author" value={state.author} name="author" onChange={handleChange} />
+        <button type="submit">Add Book</button>
       </form>
     </div>
   );
