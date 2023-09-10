@@ -32,11 +32,11 @@ const AddBook = () => {
 
   return (
     <div className="form-card">
-      <h2>ADD NEW BOOK</h2>
-      <form onSubmit={addBookHandler}>
-        <input type="text" placeholder="Title" value={state.title} name="title" onChange={handleChange} />
-        <input type="text" placeholder="Author" value={state.author} name="author" onChange={handleChange} />
-        <select type="text" name="category" value={state.category} placeholder="Category" onChange={handleChange} id="input-category">
+      <h2 className="form-title">ADD NEW BOOK</h2>
+      <form className="add-form" onSubmit={addBookHandler}>
+        <input type="text" placeholder="Title" value={state.title} name="title" onChange={handleChange} id="input-title" className="input title-input" />
+        <input type="text" placeholder="Author" value={state.author} name="author" onChange={handleChange} id="input-author" className="input title-input" />
+        <select type="text" name="category" value={state.category} placeholder="Category" onChange={handleChange} id="input-category" className="input category-input">
           <option value="" disabled>Categories</option>
           <option value="fiction">Fiction</option>
           <option value="non-fiction">Non-Fiction</option>
