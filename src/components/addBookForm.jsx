@@ -8,6 +8,7 @@ const AddBook = () => {
   const [state, setState] = React.useState({
     title: '',
     author: '',
+    category: '',
   });
 
   const handleChange = (event) => {
@@ -18,24 +19,30 @@ const AddBook = () => {
     event.preventDefault();
     const newBook = {
       item_id: v4(),
+      category: state.category,
       title: state.title,
       author: state.author,
-      category: '',
     };
 
     await dispatch(addBook(newBook));
     await dispatch(fetchBooks());
 
-    setState({ title: '', author: '' });
+    setState({ title: '', author: '', category: '' });
   };
 
   return (
     <div className="form-card">
-      <h2>ADD NEW BOOK</h2>
-      <form onSubmit={addBookHandler}>
-        <input type="text" placeholder="Title" value={state.title} name="title" onChange={handleChange} />
-        <input type="text" placeholder="Author" value={state.author} name="author" onChange={handleChange} />
-        <button type="submit">Add Book</button>
+      <h2 className="form-title">ADD NEW BOOK</h2>
+      <form className="add-form" onSubmit={addBookHandler}>
+        <input type="text" placeholder="Title" value={state.title} name="title" onChange={handleChange} id="input-title" className="input title-input" />
+        <input type="text" placeholder="Author" value={state.author} name="author" onChange={handleChange} id="input-author" className="input title-input" />
+        <select type="text" name="category" value={state.category} placeholder="Category" onChange={handleChange} id="input-category" className="input category-input">
+          <option value="" disabled>Categories</option>
+          <option value="fiction">Fiction</option>
+          <option value="non-fiction">Non-Fiction</option>
+          <option value="biography">Biography</option>
+        </select>
+        <button type="submit" className="add-butn">Add Book</button>
       </form>
     </div>
   );
